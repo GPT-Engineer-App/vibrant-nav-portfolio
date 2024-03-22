@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Box, Flex, Heading, Text, Image, Button, Link, UnorderedList, ListItem, Divider, IconButton, useColorMode, Slider, Slide } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Image, Button, Link, UnorderedList, ListItem, Divider, IconButton, useColorMode } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub, FaEnvelope, FaMoon, FaSun } from "react-icons/fa";
 import { ColorModeContext } from "../main";
 
