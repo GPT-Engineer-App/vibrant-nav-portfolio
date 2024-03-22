@@ -1,6 +1,7 @@
-import React from "react";
-import { Box, Flex, Heading, Text, Image, Button, Link, UnorderedList, ListItem, Divider, IconButton } from "@chakra-ui/react";
+import React, { useContext } from "react";
+import { Box, Flex, Heading, Text, Image, Button, Link, UnorderedList, ListItem, Divider, IconButton, useColorMode } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { ColorModeContext } from "../main";
 
 const projects = [
   {
@@ -26,8 +27,10 @@ const projects = [
 ];
 
 const Index = () => {
+  const { colorMode, toggleColorMode } = useContext(ColorModeContext);
+
   return (
-    <Box>
+    <Box bg={colorMode === "light" ? "white" : "gray.800"} color={colorMode === "light" ? "black" : "white"}>
       {/* Navbar */}
       <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="gray.100">
         <Flex align="center" mr={5}>
@@ -39,6 +42,9 @@ const Index = () => {
         <Box display={{ base: "block", md: "none" }}>{/* TODO: Add responsive menu */}</Box>
 
         <Box display={{ base: "none", md: "flex" }} width={{ base: "full", md: "auto" }} alignItems="center" flexGrow={1}>
+          <Button onClick={toggleColorMode} ml={4}>
+            {colorMode === "light" ? "Dark" : "Light"} Mode
+          </Button>
           <Link href="#about" px={2} py={1}>
             About
           </Link>
