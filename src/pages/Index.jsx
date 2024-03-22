@@ -32,7 +32,7 @@ const Index = () => {
   return (
     <Box bg={colorMode === "light" ? "white" : "gray.800"} color={colorMode === "light" ? "black" : "white"}>
       {/* Navbar */}
-      <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg="gray.100">
+      <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1.5rem" bg={colorMode === "light" ? "gray.100" : "gray.700"}>
         <Flex align="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
             Adam Shahin
