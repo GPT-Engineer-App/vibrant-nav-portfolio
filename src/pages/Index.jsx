@@ -159,6 +159,17 @@ const Index = () => {
             <Heading as="h3" size="lg" mb={2}>
               {project.title}
             </Heading>
+            {Array.isArray(project.description) ? (
+              <UnorderedList mt={4}>
+                {project.description.map((item, itemIndex) => (
+                  <ListItem key={itemIndex}>{item}</ListItem>
+                ))}
+              </UnorderedList>
+            ) : (
+              <Text fontSize="lg" mt={4}>
+                {project.description}
+              </Text>
+            )}
             <Flex mt={4} overflowX="auto">
               {project.images.map((image, imageIndex) => (
                 <Image key={imageIndex} src={image} alt={`${project.title} ${imageIndex + 1}`} mr={4} boxSize="200px" objectFit="cover" />
