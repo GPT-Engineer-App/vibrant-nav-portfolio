@@ -180,8 +180,8 @@ const Index = () => {
           Or find me on...
         </Text>
         <Flex>
-          <IconButton as={Link} href="https://www.linkedin.com/in/your-linkedin-profile" aria-label="LinkedIn" icon={<FaLinkedin />} colorScheme="blue" mr={2} />
-          <IconButton as={Link} href="https://github.com/your-github-profile" aria-label="GitHub" icon={<FaGithub />} colorScheme="gray" />
+          <IconButton as={Link} href="https://www.linkedin.com/in/adamshahin" aria-label="LinkedIn" icon={<FaLinkedin />} colorScheme="blue" mr={2} />
+          <IconButton as={Link} href="https://github.com/shahi068" aria-label="GitHub" icon={<FaGithub />} colorScheme="gray" />
         </Flex>
       </Box>
     </Box>
