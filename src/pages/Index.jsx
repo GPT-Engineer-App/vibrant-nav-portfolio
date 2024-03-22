@@ -144,7 +144,8 @@ const Index = () => {
 
       <Divider my={8} />
 
-      {/* Projects Section */}
+      {}
+      {}
       <Box id="projects" p={4}>
         <Heading as="h2" size="xl" mb={4}>
           Projects
