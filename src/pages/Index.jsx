@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Box, Flex, Heading, Text, Image, Button, Link, UnorderedList, ListItem, Divider, IconButton, useColorMode } from "@chakra-ui/react";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaMoon, FaSun } from "react-icons/fa";
 import { ColorModeContext } from "../main";
 
 const projects = [
@@ -42,9 +42,7 @@ const Index = () => {
         <Box display={{ base: "block", md: "none" }}>{/* TODO: Add responsive menu */}</Box>
 
         <Box display={{ base: "none", md: "flex" }} width={{ base: "full", md: "auto" }} alignItems="center" flexGrow={1}>
-          <Button onClick={toggleColorMode} ml={4}>
-            {colorMode === "light" ? "Dark" : "Light"} Mode
-          </Button>
+          <IconButton onClick={toggleColorMode} ml="auto" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} aria-label="Toggle color mode" />
           <Link href="#about" px={2} py={1}>
             About
           </Link>
