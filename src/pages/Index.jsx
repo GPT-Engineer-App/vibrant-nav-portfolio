@@ -7,27 +7,22 @@ const projects = [
   {
     title: "Cryptocurrency Price Tracker",
     description: "Created a program capable of tracking the prices of cryptocurrency updated in live time utilizing Python & PyQt6. The program UI was created using QT Designer.",
-    images: ["https://example.com/crypto1.jpg", "https://example.com/crypto2.jpg", "https://example.com/crypto3.jpg"],
   },
   {
     title: "Drone Simulation Model",
     description: ["Directed an advanced drone delivery simulation using State and Observer patterns to enhance realism by 30%.", "Enhanced both front-end and back-end development processes, achieving a 25% reduction in bug occurrence and a 20% improvement in UI responsiveness.", "Refined Agile project delivery with Jira, leading to a 40% boost in team productivity and a 15% reduction in release time."],
-    images: ["https://example.com/drone1.jpg", "https://example.com/drone2.jpg", "https://example.com/drone3.jpg"],
   },
   {
     title: "Handwritten Digit Detector",
     description: ["Created a machine-learning model capable of identifying handwritten digits utilizing the open-source TensorFlow library and the MNIST dataset.", "The machine-learning model achieved an accuracy of 93 percent on average."],
-    images: ["https://example.com/digit1.jpg", "https://example.com/digit2.jpg", "https://example.com/digit3.jpg"],
   },
   {
     title: "Publish Subscribe System (PubSub)",
     description: ["PubSub is a publish-subscribe system that allows clients to join, leave, subscribe, unsubscribe, publish and ping.", "The system is comprised of two components: the server and the client.", "The server is implemented using the Remote Procedure Call (RPC) library rpyc and manages a list of clients and articles.", "The client uses the rpyc library to connect to the server and allows the user to make requests.", "Articles are received by clients using a UDP socket and a receive thread is started to listen for incoming articles."],
-    images: ["https://example.com/pubsub1.jpg", "https://example.com/pubsub2.jpg", "https://example.com/pubsub3.jpg"],
   },
   {
     title: "Tetris Variant",
     description: ["Implemented an animated Python GUI program to play a variant of the classic video game Tetris using the turtle library.", "Utilized object-oriented programming concepts to create classes that encapsulate the game's data and behavior.", "Customized the game's play area size and color, making the game adaptable to different screen sizes."],
-    images: ["https://example.com/tetris1.jpg", "https://example.com/tetris2.jpg", "https://example.com/tetris3.jpg"],
   },
 ];
 
@@ -160,31 +155,13 @@ const Index = () => {
               {project.title}
             </Heading>
             {Array.isArray(project.description) ? (
-              <UnorderedList mt={4}>
+              <UnorderedList>
                 {project.description.map((item, itemIndex) => (
                   <ListItem key={itemIndex}>{item}</ListItem>
                 ))}
               </UnorderedList>
             ) : (
-              <Text fontSize="lg" mt={4}>
-                {project.description}
-              </Text>
-            )}
-            <Flex mt={4} overflowX="auto">
-              {project.images.map((image, imageIndex) => (
-                <Image key={imageIndex} src={image} alt={`${project.title} ${imageIndex + 1}`} mr={4} boxSize="200px" objectFit="cover" />
-              ))}
-            </Flex>
-            {Array.isArray(project.description) ? (
-              <UnorderedList mt={4}>
-                {project.description.map((item, itemIndex) => (
-                  <ListItem key={itemIndex}>{item}</ListItem>
-                ))}
-              </UnorderedList>
-            ) : (
-              <Text fontSize="lg" mt={4}>
-                {project.description}
-              </Text>
+              <Text fontSize="lg">{project.description}</Text>
             )}
           </Box>
         ))}
