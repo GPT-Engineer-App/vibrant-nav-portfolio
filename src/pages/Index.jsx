@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Box, Flex, Heading, Text, Image, Button, Link, UnorderedList, ListItem, Divider, IconButton, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Image, Button, Link, UnorderedList, ListItem, Divider, IconButton, useColorMode, Slider, Slide } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub, FaEnvelope, FaMoon, FaSun } from "react-icons/fa";
 import { ColorModeContext } from "../main";
 
@@ -144,27 +144,31 @@ const Index = () => {
 
       <Divider my={8} />
 
-      {/* Projects Section */}
+      {}
       <Box id="projects" p={4}>
         <Heading as="h2" size="xl" mb={4}>
           Projects
         </Heading>
-        {projects.map((project, index) => (
-          <Box key={index} mb={8}>
-            <Heading as="h3" size="lg" mb={2}>
-              {project.title}
-            </Heading>
-            {Array.isArray(project.description) ? (
-              <UnorderedList>
-                {project.description.map((item, itemIndex) => (
-                  <ListItem key={itemIndex}>{item}</ListItem>
-                ))}
-              </UnorderedList>
-            ) : (
-              <Text fontSize="lg">{project.description}</Text>
-            )}
-          </Box>
-        ))}
+        <Slider>
+          {projects.map((project, index) => (
+            <Slide key={index}>
+              <Box p={4} borderWidth={1} borderRadius="lg">
+                <Heading as="h3" size="lg" mb={2}>
+                  {project.title}
+                </Heading>
+                {Array.isArray(project.description) ? (
+                  <UnorderedList>
+                    {project.description.map((item, itemIndex) => (
+                      <ListItem key={itemIndex}>{item}</ListItem>
+                    ))}
+                  </UnorderedList>
+                ) : (
+                  <Text fontSize="lg">{project.description}</Text>
+                )}
+              </Box>
+            </Slide>
+          ))}
+        </Slider>
       </Box>
 
       <Divider my={8} />
