@@ -149,26 +149,22 @@ const Index = () => {
         <Heading as="h2" size="xl" mb={4}>
           Projects
         </Heading>
-        <Slider>
-          {projects.map((project, index) => (
-            <Slide key={index}>
-              <Box p={4} borderWidth={1} borderRadius="lg">
-                <Heading as="h3" size="lg" mb={2}>
-                  {project.title}
-                </Heading>
-                {Array.isArray(project.description) ? (
-                  <UnorderedList>
-                    {project.description.map((item, itemIndex) => (
-                      <ListItem key={itemIndex}>{item}</ListItem>
-                    ))}
-                  </UnorderedList>
-                ) : (
-                  <Text fontSize="lg">{project.description}</Text>
-                )}
-              </Box>
-            </Slide>
-          ))}
-        </Slider>
+        {projects.map((project, index) => (
+          <Box key={index} p={4} borderWidth={1} borderRadius="lg" mb={4}>
+            <Heading as="h3" size="lg" mb={2}>
+              {project.title}
+            </Heading>
+            {Array.isArray(project.description) ? (
+              <UnorderedList>
+                {project.description.map((item, itemIndex) => (
+                  <ListItem key={itemIndex}>{item}</ListItem>
+                ))}
+              </UnorderedList>
+            ) : (
+              <Text fontSize="lg">{project.description}</Text>
+            )}
+          </Box>
+        ))}
       </Box>
 
       <Divider my={8} />
