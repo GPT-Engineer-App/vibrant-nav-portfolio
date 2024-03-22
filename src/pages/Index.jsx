@@ -170,11 +170,6 @@ const Index = () => {
                 {project.description}
               </Text>
             )}
-            <Flex mt={4} overflowX="auto">
-              {project.images.map((image, imageIndex) => (
-                <Image key={imageIndex} src={image} alt={`${project.title} ${imageIndex + 1}`} mr={4} boxSize="200px" objectFit="cover" />
-              ))}
-            </Flex>
             {Array.isArray(project.description) ? (
               <UnorderedList mt={4}>
                 {project.description.map((item, itemIndex) => (
@@ -186,6 +181,11 @@ const Index = () => {
                 {project.description}
               </Text>
             )}
+            <Flex mt={4} overflowX="auto">
+              {project.images.map((image, imageIndex) => (
+                <Image key={imageIndex} src={image} alt={`${project.title} ${imageIndex + 1}`} mr={4} boxSize="200px" objectFit="cover" />
+              ))}
+            </Flex>
           </Box>
         ))}
       </Box>
